@@ -358,9 +358,11 @@ this command will return an error.
 Your output should be a list of all the files and sub-directories in your
 Desktop directory, including the `shell-lesson-data` directory you downloaded at
 the [setup for this lesson]({{ page.root }}{% link setup.md %}).
-Hint hint, if you don't see this directory go to the setup page and download it and move it to your Desktop now.
+Hint hint, if you don't see this directory go to the setup page
+and download it and move it to your Desktop now.
 
-What you see when you list all of the files and sub-directories in your Desktop, should mirror what you see
+What you see when you list all of the files and sub-directories in your Desktop,
+should mirror what you see
 when you view your desktop through Finder or Windows Explorer. You can check it now!
 
 As you may now see, using a bash shell is strongly dependent on the idea that
