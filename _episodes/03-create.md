@@ -398,7 +398,7 @@ quotes.txt
 > > Recall that `..` refers to the parent directory (i.e. one above the current directory)
 > > and that `.` refers to the current directory.
 > > {: .solution}
-> > {: .challenge}
+{: .challenge}
 
 ## Copying files and directories
 
@@ -466,7 +466,7 @@ quotations.txt
 > > 4. No, the period(.) indicates where to copy the file, but does not provide a new file name;
 > >    identical file names cannot be created.
 > >    {: .solution}
-> >    {: .challenge}
+{: .challenge}
 
 ## Removing files and directories
 
@@ -519,7 +519,7 @@ ls: cannot access 'quotes.txt': No such file or directory
 > > By using the `-i` option, we have the chance to check that we are deleting only the files
 > > that we want to remove.
 > > {: .solution}
-> > {: .challenge}
+{: .challenge}
 
 If we try to remove the `thesis` directory using `rm thesis`,
 we get an error message:
@@ -599,7 +599,7 @@ or specifying a naming pattern using wildcards.
 > >
 > > {: .error}
 > > {: .solution}
-> > {: .challenge}
+{: .challenge}
 
 ### Using wildcards for accessing multiple files at once
 
@@ -665,7 +665,7 @@ or specifying a naming pattern using wildcards.
 > >
 > > `4.` only shows files starting with `ethane.`.
 > > {: .solution}
-> > {: .challenge}
+{: .challenge}
 
 > ## Organizing Directories and Files
 >
@@ -716,7 +716,7 @@ or specifying a naming pattern using wildcards.
 > > The shell will expand \*.dat to match all .dat files in the current directory.
 > > The `mv` command then moves the list of .dat files to the 'analyzed' directory.
 > > {: .solution}
-> > {: .challenge}
+{: .challenge}
 
 > ## Reproduce a folder structure
 >
@@ -794,6 +794,6 @@ or specifying a naming pattern using wildcards.
 > > The final set of commands generates the 'raw' and 'processed' directories at the same level
 > > as the 'data' directory.
 > > {: .solution}
-> > {: .challenge}
+{: .challenge}
 
 {% include links.md %}

@@ -299,7 +299,7 @@ To **quit** the `man` pages, press <kbd>Q</kbd>.
 > > this makes the file size '**h**uman readable', i.e. displaying something like `5.3K`
 > > instead of `5369`.
 > > {: .solution}
-> > {: .challenge}
+{: .challenge}
 
 > ## Listing in Reverse Chronological Order
 >
@@ -317,7 +317,7 @@ To **quit** the `man` pages, press <kbd>Q</kbd>.
 > > can be very useful for finding your most recent edits or checking to
 > > see if a new output file was written.
 > > {: .solution}
-> > {: .challenge}
+{: .challenge}
 
 ### Exploring Other Directories
 
@@ -658,7 +658,7 @@ Run `pwd` and `ls -F` to ensure that we're in the directory we expect.
 > > 8. Yes: shortcut to go back to the user's home directory.
 > > 9. Yes: goes up one level.
 > >    {: .solution}
-> >    {: .challenge}
+{: .challenge}
 
 > ## `ls` Reading Comprehension
 >
@@ -689,7 +689,7 @@ directories "backup" and "thing"; "/Users/backup" contains "original",
 > >     in the current directory.
 > > 3.  Yes: uses the absolute path explicitly.
 > >     {: .solution}
-> >     {: .challenge}
+{: .challenge}
 
 ## General Syntax of a Shell Command
 
