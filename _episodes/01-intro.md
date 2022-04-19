@@ -36,9 +36,16 @@ With the proper commands, the shell can repeat tasks with or without some modifi
 as many times as we want.
 
 Personal example:
-I was excited to teach this workshop not because I am someone that lives in the command line or has even been using it for many years but rather because there have been a few instances in my day-to-day work where the power of this tool has made a huge difference. I manage a collection of websites and databases as part of the services offered by the Digital Archaeology Lab and so have regular backups that need to be conducted. With the command line and a few scripts, I can backup the 30+ sites (all of the files and underlying databases) in around 15 minutes. If I were to try to do this manually using the GUI available to me, it takes somewhere between half a day to a full day of work...depending on how often I am distracted from sheer boredom waiting for progress bars to complete.
+I was excited to teach this workshop not because I am someone that lives in the command line or has even been
+using it for many years but rather because there have been a few instances in my day-to-day work where the power
+of this tool has made a huge difference. I manage a collection of websites and databases as part of the services offered by the Digital Archaeology Lab and so have regular backups that need to be conducted. With the command
+line and a few scripts, I can backup the 30+ sites (all of the files and underlying databases) in around 15
+minutes. If I were to try to do this manually using the GUI available to me, it takes somewhere between half a
+day to a full day of work...depending on how often I am distracted from sheer boredom waiting for progress bars to complete.
 
-So even if you are working in environments that offer a GUI, being comfortable enough with the shell to input commands and follow tutorials or guides online that assume you will be using the command line is extremely helpful.
+So even if you are working in environments that offer a GUI, being comfortable enough with the shell to input
+commands and follow tutorials or guides online that assume you will be using the command line is extremely
+helpful.
 
 ### The Shell
 
@@ -50,7 +57,10 @@ so-called because it's derived from a shell written by Stephen Bourne).
 Bash is the default shell on most modern implementations of Unix and in most packages that provide
 Unix-like tools for Windows.
 
-Learning how to use the shell may not be intuitive at first - it certainly wasn't for me. With a GUI you're given choices that you can select from, with the shell you have to know what to type, kind of like learning a new vocabulary in a language. However, unlike a spoken language, a small number of "words" (i.e. commands) gets you a long way, and we'll cover those essentials today.
+Learning how to use the shell may not be intuitive at first - it certainly wasn't for me. With a GUI you're given
+choices that you can select from, with the shell you have to know what to type, kind of like learning a new
+vocabulary in a language. However, unlike a spoken language, a small number of "words" (i.e. commands) gets you a
+long way, and we'll cover those essentials today.
 
 The grammar of a shell allows you to combine existing tools into powerful
 pipelines and handle large volumes of data automatically. Sequences of
