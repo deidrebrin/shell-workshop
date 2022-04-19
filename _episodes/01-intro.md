@@ -98,7 +98,6 @@ indicating that the shell is waiting for input.
 ```
 $
 ```
-
 {: .language-bash}
 
 The shell typically uses `$ ` as the prompt, but may use a different symbol.
@@ -119,14 +118,12 @@ This command will list the contents of the current directory:
 ```
 $ ls
 ```
-
 {: .language-bash}
 
 ```
 Desktop     Downloads   Movies      Pictures
 Documents   Library     Music       Public
 ```
-
 {: .output}
 
 > ## Command not found
@@ -137,13 +134,11 @@ Documents   Library     Music       Public
 > ```
 > $ ks
 > ```
->
 > {: .language-bash}
 >
 > ```
 > ks: command not found
 > ```
->
 > {: .output}
 >
 > This might happen if the command was mis-typed or if the program corresponding to that command
