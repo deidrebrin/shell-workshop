@@ -47,13 +47,11 @@ a command is important. `pwd` shows you where you are:
 ```
 $ pwd
 ```
-
 {: .language-bash}
 
 ```
 /Users/nelle
 ```
-
 {: .output}
 
 Here,
@@ -136,14 +134,12 @@ own filesystem. We can see what's in our home directory by running `ls`:
 ```
 $ ls
 ```
-
 {: .language-bash}
 
 ```
 Applications Documents    Library      Music        Public
 Desktop      Downloads    Movies       Pictures
 ```
-
 {: .output}
 
 (Again, your results may be slightly different depending on your operating
@@ -165,14 +161,12 @@ directory.
 ```
 $ ls -F
 ```
-
 {: .language-bash}
 
 ```
 Applications/ Documents/    Library/      Music/        Public/
 Desktop/      Downloads/    Movies/       Pictures/
 ```
-
 {: .output}
 
 Here,
@@ -204,7 +198,6 @@ information on how to use the command or program. Note: not available on MacOS
 ```
 $ ls --help
 ```
-
 {: .language-bash}
 
 ```
@@ -234,7 +227,6 @@ Mandatory arguments to long options are mandatory for short options, too.
   -F, --classify             append indicator (one of */=>@|) to entries
 ...        ...        ...
 ```
-
 {: .output}
 
 #### The `man` command
@@ -244,7 +236,6 @@ The other way (which is not available in Git Bash) is to type
 ```
 $ man ls
 ```
-
 {: .language-bash}
 
 This command will turn your terminal into a page with a description
@@ -282,14 +273,12 @@ To **quit** the `man` pages, press <kbd>Q</kbd>.
 > ```
 > $ ls -j
 > ```
->
 > {: .language-bash}
 >
 > ```
 > ls: invalid option -- 'j'
 > Try 'ls --help' for more information.
 > ```
->
 > {: .error}
 > {: .callout}
 
@@ -343,13 +332,11 @@ we want a listing of something other than our current working directory:
 ```
 $ ls -F Desktop
 ```
-
 {: .language-bash}
 
 ```
 shell-lesson-data/
 ```
-
 {: .output}
 
 If a directory named `Desktop` does not exist in your current working directory,
@@ -381,13 +368,11 @@ a directory name to `ls`:
 ```
 $ ls -F Desktop/shell-lesson-data
 ```
-
 {: .language-bash}
 
 ```
 exercise-data/  north-pacific-gyre/
 ```
-
 {: .output}
 
 Second, we can actually change our location to a different directory, so
@@ -410,7 +395,6 @@ $ cd Desktop
 $ cd shell-lesson-data
 $ cd exercise-data
 ```
-
 {: .language-bash}
 
 These commands will move us from our home directory into our Desktop directory, then into
@@ -427,25 +411,21 @@ because that's where we now are:
 ```
 $ pwd
 ```
-
 {: .language-bash}
 
 ```
 /Users/nelle/Desktop/shell-lesson-data/exercise-data
 ```
-
 {: .output}
 
 ```
 $ ls -F
 ```
-
 {: .language-bash}
 
 ```
 animal-counts/  creatures/  numbers.txt  proteins/  writing/
 ```
-
 {: .output}
 
 We now know how to go down the directory tree (i.e. how to go into a subdirectory),
@@ -455,13 +435,11 @@ We might try the following:
 ```
 $ cd shell-lesson-data
 ```
-
 {: .language-bash}
 
 ```
 -bash: cd: shell-lesson-data: No such file or directory
 ```
-
 {: .error}
 
 But we get an error! Why is this?
@@ -477,7 +455,6 @@ that looks like this:
 ```
 $ cd ..
 ```
-
 {: .language-bash}
 
 `..` is a special directory name meaning
@@ -490,13 +467,11 @@ if we run `pwd` after running `cd ..`, we're back in `/Users/nelle/Desktop/shell
 ```
 $ pwd
 ```
-
 {: .language-bash}
 
 ```
 /Users/nelle/Desktop/shell-lesson-data
 ```
-
 {: .output}
 
 The special directory `..` doesn't usually show up when we run `ls`. If we want
@@ -505,13 +480,11 @@ to display it, we can add the `-a` option to `ls -F`:
 ```
 $ ls -F -a
 ```
-
 {: .language-bash}
 
 ```
 ./  ../  exercise-data/  north-pacific-gyre/
 ```
-
 {: .output}
 
 `-a` stands for 'show all';
@@ -546,7 +519,6 @@ a directory?
 ```
 $ cd
 ```
-
 {: .language-bash}
 
 How can you check what happened? `pwd` gives us the answer!
@@ -554,13 +526,11 @@ How can you check what happened? `pwd` gives us the answer!
 ```
 $ pwd
 ```
-
 {: .language-bash}
 
 ```
 /Users/nelle
 ```
-
 {: .output}
 
 It turns out that `cd` without an argument will return you to your home directory,
@@ -573,7 +543,6 @@ to move to `exercise-data` in one step:
 ```
 $ cd Desktop/shell-lesson-data/exercise-data
 ```
-
 {: .language-bash}
 
 Check that we've moved to the right place by running `pwd` and `ls -F`.
@@ -601,19 +570,16 @@ to move to `shell-lesson-data`.
 ```
 $ pwd
 ```
-
 {: .language-bash}
 
 ```
 /Users/nelle/Desktop/shell-lesson-data/exercise-data
 ```
-
 {: .output}
 
 ```
 $ cd /Users/nelle/Desktop/shell-lesson-data
 ```
-
 {: .language-bash}
 
 Run `pwd` and `ls -F` to ensure that we're in the directory we expect.
@@ -643,7 +609,6 @@ Run `pwd` and `ls -F` to ensure that we're in the directory we expect.
 > ```
 > $ cd ~/Desktop/shell-lesson-data
 > ```
->
 > {: .language-bash}
 >
 > Then `cd` into the `exercise-data/creatures` directory
@@ -651,7 +616,6 @@ Run `pwd` and `ls -F` to ensure that we're in the directory we expect.
 > ```
 > $ cd exercise-data/creatures
 > ```
->
 > {: .language-bash}
 >
 > Now if you run
@@ -659,8 +623,8 @@ Run `pwd` and `ls -F` to ensure that we're in the directory we expect.
 > ```
 > $ cd -
 > ```
->
 > {: .language-bash}
+> 
 > you'll see you're back in `~/Desktop/shell-lesson-data`.
 > Run `cd -` again and you're back in `~/Desktop/shell-lesson-data/exercise-data/creatures`
 > {: .callout}
@@ -706,7 +670,6 @@ Run `pwd` and `ls -F` to ensure that we're in the directory we expect.
 > ```
 > pnas_sub/ pnas_final/ original/
 > ```
->
 > {: .output}
 >
 > ![A directory tree below the Users directory where "/Users" contains the
@@ -739,7 +702,6 @@ which we will dissect into its component parts:
 ```
 $ ls -F /
 ```
-
 {: .language-bash}
 
 ![General syntax of a shell command](../fig/shell_command_syntax.svg)
@@ -768,26 +730,22 @@ while `ls -S` will sort the files and directories by size, as shown below:
 $ cd ~/Desktop/shell-lesson-data
 $ ls -s exercise-data
 ```
-
 {: .language-bash}
 
 ```
 total 28
  4 animal-counts   4 creatures  12 numbers.txt   4 proteins   4 writing
 ```
-
 {: .output}
 
 ```
 $ ls -S exercise-data
 ```
-
 {: .language-bash}
 
 ```
 animal-counts  creatures  proteins  writing  numbers.txt
 ```
-
 {: .output}
 
 Putting all that together, our command above gives us a listing
@@ -797,7 +755,6 @@ An example of the output you might get from the above command is given below:
 ```
 $ ls -F /
 ```
-
 {: .language-bash}
 
 ```
@@ -805,7 +762,6 @@ Applications/         System/
 Library/              Users/
 Network/              Volumes/
 ```
-
 {: .output}
 
 ### Nelle's Pipeline: Organizing Files
@@ -834,7 +790,6 @@ Nelle can see what files she has using the command:
 ```
 $ ls north-pacific-gyre/
 ```
-
 {: .language-bash}
 
 This command is a lot to type,
@@ -844,7 +799,6 @@ If she types:
 ```
 $ ls nor
 ```
-
 {: .language-bash}
 
 and then presses <kbd>Tab</kbd> (the tab key on her keyboard),
@@ -853,7 +807,6 @@ the shell automatically completes the directory name for her:
 ```
 $ ls north-pacific-gyre/
 ```
-
 {: .language-bash}
 
 Pressing <kbd>Tab</kbd> again does nothing,
@@ -867,7 +820,6 @@ the first three characters 'goo'.
 ```
 $ ls north-pacific-gyre/goo
 ```
-
 {: .language-bash}
 
 To see all of those files, she can press <kbd>Tab</kbd> twice more.
@@ -876,7 +828,6 @@ To see all of those files, she can press <kbd>Tab</kbd> twice more.
 ls north-pacific-gyre/goo
 goodiff.sh   goostats.sh
 ```
-
 {: .language-bash}
 
 This is called **tab completion**,

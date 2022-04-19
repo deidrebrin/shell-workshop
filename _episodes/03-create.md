@@ -38,13 +38,11 @@ which we can checking using:
 ```
 $ pwd
 ```
-
 {: .language-bash}
 
 ```
 /Users/nelle/Desktop/shell-lesson-data
 ```
-
 {: .output}
 
 Next we'll move to the `exercise-data/writing` directory and see what it contains:
@@ -52,19 +50,16 @@ Next we'll move to the `exercise-data/writing` directory and see what it contain
 ```
 $ cd exercise-data/writing/
 ```
-
 {: .language-bash}
 
 ```
 $ ls -F
 ```
-
 {: .language-bash}
 
 ```
 haiku.txt  LittleWomen.txt
 ```
-
 {: .output}
 
 ### Create a directory
@@ -75,7 +70,6 @@ Let's create a new directory called `thesis` using the command `mkdir thesis`
 ```
 $ mkdir thesis
 ```
-
 {: .language-bash}
 
 As you might guess from its name,
@@ -87,13 +81,11 @@ the new directory is created in the current working directory:
 ```
 $ ls -F
 ```
-
 {: .language-bash}
 
 ```
 haiku.txt  LittleWomen.txt  thesis/
 ```
-
 {: .output}
 
 Since we've just created the `thesis` directory, there's nothing in it yet:
@@ -101,7 +93,6 @@ Since we've just created the `thesis` directory, there's nothing in it yet:
 ```
 $ ls -F thesis
 ```
-
 {: .language-bash}
 
 Note that `mkdir` is not limited to creating single directories one at a time.
@@ -111,7 +102,6 @@ in a single operation:
 ```
 $ mkdir -p ../project/data ../project/results
 ```
-
 {: .language-bash}
 
 The `-R` option to the `ls` command will list all nested subdirectories within a directory.
@@ -121,7 +111,6 @@ Let's use `ls -FR` to recursively list the new directory hierarchy we just creat
 ```
 $ ls -FR ../project
 ```
-
 {: .language-bash}
 
 ```
@@ -132,7 +121,6 @@ data/  results/
 
 ../project/results:
 ```
-
 {: .output}
 
 > ## Two ways of doing the same thing
@@ -183,7 +171,6 @@ then run a text editor called Nano to create a file called `draft.txt`:
 $ cd thesis
 $ nano draft.txt
 ```
-
 {: .language-bash}
 
 > ## Which Editor?
@@ -288,7 +275,6 @@ Returning to the `shell-lesson-data/writing` directory,
 ```
 $ cd ~/Desktop/shell-lesson-data/writing
 ```
-
 {: .language-bash}
 
 In our `thesis` directory we have a file `draft.txt`
@@ -299,7 +285,6 @@ which is short for 'move':
 ```
 $ mv thesis/draft.txt thesis/quotes.txt
 ```
-
 {: .language-bash}
 
 The first argument tells `mv` what we're 'moving',
@@ -313,13 +298,11 @@ Sure enough,
 ```
 $ ls thesis
 ```
-
 {: .language-bash}
 
 ```
 quotes.txt
 ```
-
 {: .output}
 
 One must be careful when specifying the target file name, since `mv` will
@@ -341,7 +324,6 @@ the directory name we use is the special directory name `.` that we mentioned ea
 ```
 $ mv thesis/quotes.txt .
 ```
-
 {: .language-bash}
 
 The effect is to move the file from the directory it was in to the current working directory.
@@ -350,13 +332,11 @@ The effect is to move the file from the directory it was in to the current worki
 ```
 $ ls thesis
 ```
-
 {: .language-bash}
 
 ```
 $
 ```
-
 {: .output}
 
 Alternatively, we can confirm the file `quotes.txt` is no longer present in the `thesis` directory
@@ -365,13 +345,11 @@ by explicitly trying to list it:
 ```
 $ ls thesis/quotes.txt
 ```
-
 {: .language-bash}
 
 ```
 ls: cannot access 'thesis/quotes.txt': No such file or directory
 ```
-
 {: .error}
 
 `ls` with a filename or directory as an argument only lists the requested file or directory.
@@ -381,13 +359,11 @@ We can use this to see that `quotes.txt` is now present in our current directory
 ```
 $ ls quotes.txt
 ```
-
 {: .language-bash}
 
 ```
 quotes.txt
 ```
-
 {: .output}
 
 > ## Moving Files to a new folder
@@ -403,7 +379,6 @@ quotes.txt
 > fructose.dat glucose.dat maltose.dat sucrose.dat
 > $ cd analyzed
 > ```
->
 > {: .language-bash}
 >
 > Fill in the blanks to move these files to the `raw/` folder
@@ -412,7 +387,6 @@ quotes.txt
 > ```
 > $ mv sucrose.dat maltose.dat ____/____
 > ```
->
 > {: .language-bash}
 >
 > > ## Solution
@@ -420,7 +394,6 @@ quotes.txt
 > > ```
 > > $ mv sucrose.dat maltose.dat ../raw
 > > ```
-> >
 > > {: .language-bash}
 > > Recall that `..` refers to the parent directory (i.e. one above the current directory)
 > > and that `.` refers to the current directory.
@@ -435,7 +408,6 @@ except it copies a file instead of moving it.
 ```
 $ cp quotes.txt thesis/quotations.txt
 ```
-
 {: .language-bash}
 
 We can also copy a directory and all its contents by using the
@@ -445,7 +417,6 @@ e.g. to back up a directory:
 ```
 $ cp -r thesis thesis_backup
 ```
-
 {: .language-bash}
 
 We can check the result by listing the contents of both the `thesis` and `thesis_backup` directory:
@@ -453,25 +424,21 @@ We can check the result by listing the contents of both the `thesis` and `thesis
 ```
 $ ls thesis
 ```
-
 {: .language-bash}
 
 ```
 quotations.txt
 ```
-
 {: .output}
 
 ```
 $ ls thesis
 ```
-
 {: .language-bash}
 
 ```
 quotations.txt
 ```
-
 {: .output}
 
 > ## Renaming Files
@@ -510,7 +477,6 @@ The Unix command we'll use for this is `rm` (short for 'remove'):
 ```
 $ rm quotes.txt
 ```
-
 {: .language-bash}
 
 We can confirm the file has gone using `ls`:
@@ -518,13 +484,11 @@ We can confirm the file has gone using `ls`:
 ```
 $ ls quotes.txt
 ```
-
 {: .language-bash}
 
 ```
 ls: cannot access 'quotes.txt': No such file or directory
 ```
-
 {: .error}
 
 > ## Deleting Is Forever
@@ -548,7 +512,6 @@ ls: cannot access 'quotes.txt': No such file or directory
 > > ```
 > > rm: remove regular file 'thesis_backup/quotations.txt'? y
 > > ```
-> >
 > > {: .output}
 > > The `-i` option will prompt before (every) removal (use <kbd>Y</kbd> to confirm deletion
 > > or <kbd>N</kbd> to keep the file).
@@ -564,13 +527,11 @@ we get an error message:
 ```
 $ rm thesis
 ```
-
 {: .language-bash}
 
 ```
 rm: cannot remove `thesis': Is a directory
 ```
-
 {: .error}
 
 This happens because `rm` by default only works on files, not directories.
@@ -581,7 +542,6 @@ recursive option `-r`, and it will do so _without any confirmation prompts_:
 ```
 $ rm -r thesis
 ```
-
 {: .language-bash}
 
 Given that there is no way to retrieve files deleted using the shell,
@@ -604,7 +564,6 @@ or specifying a naming pattern using wildcards.
 > $ mkdir backup
 > $ cp creatures/minotaur.dat creatures/unicorn.dat backup/
 > ```
->
 > {: .language-bash}
 >
 > In the example below, what does `cp` do when given three or more file names?
@@ -613,19 +572,16 @@ or specifying a naming pattern using wildcards.
 > $ cd creatures
 > $ ls -F
 > ```
->
 > {: .language-bash}
 >
 > ```
 > basilisk.dat  minotaur.dat  unicorn.dat
 > ```
->
 > {: .output}
 >
 > ```
 > $ $ cp minotaur.dat unicorn.dat basilisk.dat
 > ```
->
 > {: .language-bash}
 >
 > > ## Solution
@@ -719,13 +675,11 @@ or specifying a naming pattern using wildcards.
 > ```
 > $ ls -F
 > ```
->
 > {: .language-bash}
 >
 > ```
 > analyzed/  fructose.dat    raw/   sucrose.dat
 > ```
->
 > {: .output}
 >
 > The `fructose.dat` and `sucrose.dat` files contain output from her data
@@ -735,25 +689,21 @@ or specifying a naming pattern using wildcards.
 > ```
 > $ ls -F
 > ```
->
 > {: .language-bash}
 >
 > ```
 > analyzed/   raw/
 > ```
->
 > {: .output}
 >
 > ```
 > $ ls analyzed
 > ```
->
 > {: .language-bash}
 >
 > ```
 > fructose.dat    sucrose.dat
 > ```
->
 > {: .output}
 >
 > > ## Solution
@@ -761,7 +711,6 @@ or specifying a naming pattern using wildcards.
 > > ```
 > > mv *.dat analyzed
 > > ```
-> >
 > > {: .language-bash}
 > > Jamie needs to move her files `fructose.dat` and `sucrose.dat` to the `analyzed` directory.
 > > The shell will expand \*.dat to match all .dat files in the current directory.
@@ -786,7 +735,6 @@ or specifying a naming pattern using wildcards.
 >    ├── processed
 >    └── raw
 > ```
->
 > {: .output}
 >
 > Which of the following set of commands would achieve this objective?
@@ -798,7 +746,6 @@ or specifying a naming pattern using wildcards.
 > $ mkdir 2016-05-20/data/processed
 > $ mkdir 2016-05-20/data/raw
 > ```
->
 > {: .language-bash}
 >
 > ```
@@ -808,21 +755,18 @@ or specifying a naming pattern using wildcards.
 > $ cd data
 > $ mkdir raw processed
 > ```
->
 > {: .language-bash}
 >
 > ```
 > $ mkdir 2016-05-20/data/raw
 > $ mkdir 2016-05-20/data/processed
 > ```
->
 > {: .language-bash}
 >
 > ```
 > $ mkdir -p 2016-05-20/data/raw
 > $ mkdir -p 2016-05-20/data/processed
 > ```
->
 > {: .language-bash}
 >
 > ```
@@ -831,7 +775,6 @@ or specifying a naming pattern using wildcards.
 > $ mkdir data
 > $ mkdir raw processed
 > ```
->
 > {: .language-bash}
 >
 > > ## Solution
