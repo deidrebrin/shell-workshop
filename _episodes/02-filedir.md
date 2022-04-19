@@ -73,7 +73,7 @@ which is Nelle's **home directory**:
 > or some commands in this lesson will not work as written.
 > See [Exploring Other Directories](#exploring-other-directories) for more details
 > on the `cd` command.
-> {: .callout}
+{: .callout}
 
 To understand what a 'home directory' is,
 let's have a look at how the file system as a whole is organized. For the
@@ -111,7 +111,7 @@ because its name begins with `/`.
 > When it appears at the front of a file or directory name,
 > it refers to the root directory. When it appears _inside_ a path,
 > it's just a separator.
-> {: .callout}
+{: .callout}
 
 Underneath `/Users`,
 we find one directory for each user with an account on Nelle's machine,
@@ -179,7 +179,7 @@ are plain old **files**.
 > If your screen gets too cluttered, you can clear your terminal using the
 > `clear` command. You can still access previous commands using <kbd>↑</kbd>
 > and <kbd>↓</kbd> to move line-by-line, or by scrolling in your terminal.
-> {: .callout}
+{: .callout}
 
 ### Getting help
 
@@ -280,7 +280,7 @@ To **quit** the `man` pages, press <kbd>Q</kbd>.
 > Try 'ls --help' for more information.
 > ```
 > {: .error}
-> {: .callout}
+{: .callout}
 
 > ## Exploring More `ls` Flags
 >
@@ -509,7 +509,7 @@ equivalent to `ls -Fa`.
 > different programs on your computer. The prefix `.` is used to prevent these
 > configuration files from cluttering the terminal when a standard `ls` command
 > is used.
-> {: .callout}
+{: .callout}
 
 These three commands are the basic commands for navigating the filesystem on your computer:
 `pwd`, `ls`, and `cd`. Let's explore some variations on those commands. What happens
@@ -627,7 +627,7 @@ Run `pwd` and `ls -F` to ensure that we're in the directory we expect.
 > 
 > you'll see you're back in `~/Desktop/shell-lesson-data`.
 > Run `cd -` again and you're back in `~/Desktop/shell-lesson-data/exercise-data/creatures`
-> {: .callout}
+{: .callout}
 
 > ## Absolute vs Relative Paths
 >

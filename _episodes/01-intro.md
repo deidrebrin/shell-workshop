@@ -143,7 +143,7 @@ Documents   Library     Music       Public
 >
 > This might happen if the command was mis-typed or if the program corresponding to that command
 > is not installed.
-> {: .callout}
+{: .callout}
 
 ## Nelle's Pipeline: A Typical Problem
 

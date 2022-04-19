@@ -130,7 +130,7 @@ data/  results/
 > the `thesis` directory will appear there too.
 > While the shell and the file explorer are two different ways of interacting with the files,
 > the files and directories themselves are the same.
-> {: .callout}
+{: .callout}
 
 > ## Good names for files and directories
 >
@@ -160,7 +160,7 @@ data/  results/
 >
 > If you need to refer to names of files or directories that have spaces
 > or other special characters, you should surround the name in quotes (`""`).
-> {: .callout}
+{: .callout}
 
 ### Create a text file
 
@@ -195,7 +195,7 @@ $ nano draft.txt
 > your computer's start menu, it may want to save files in your desktop or
 > documents directory instead. You can change this by navigating to
 > another directory the first time you 'Save As...'
-> {: .callout}
+{: .callout}
 
 Let's type in a few lines of text.
 Once we're happy with our text, we can press <kbd>Ctrl</kbd>+<kbd>O</kbd>
@@ -227,7 +227,7 @@ return to the shell.
 > In nano, along the bottom of the screen you'll see `^G Get Help ^O WriteOut`.
 > This means that you can use `Control-G` to get help and `Control-O` to save your
 > file.
-> {: .callout}
+{: .callout}
 
 `nano` doesn't leave any output on the screen after it exits,
 but `ls` now shows that we have created a file called `draft.txt`:
@@ -266,7 +266,7 @@ draft.txt
 > magically turn it into a recording of whale song, though it _might_
 > cause the operating system to try to open it with a music player
 > when someone double-clicks it.
-> {: .callout}
+{: .callout}
 
 ## Moving files and directories
 
@@ -500,7 +500,7 @@ ls: cannot access 'quotes.txt': No such file or directory
 > recovering deleted files do exist, but there's no guarantee they'll
 > work in any particular situation, since the computer may recycle the
 > file's disk space right away.
-> {: .callout}
+{: .callout}
 
 > ## Using `rm` Safely
 >
@@ -631,7 +631,7 @@ or specifying a naming pattern using wildcards.
 > file names matching these expressions, but not the wildcards
 > themselves. It is the shell, not the other programs, that deals with
 > expanding wildcards.
-> {: .callout}
+{: .callout}
 
 > ## List filenames matching a pattern
 >
