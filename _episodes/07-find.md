@@ -25,7 +25,8 @@ word 'grep'.
 a common sequence of operations in early Unix text editors.
 It is also the name of a very useful command-line program.
 
-`grep` finds and prints lines in files that match a pattern.
+`grep` finds and prints out lines from within files that match a pattern.
+
 For our examples,
 we will use a file that contains three haiku taken from a
 1998 competition in *Salon* magazine. For this set of examples,
@@ -53,14 +54,6 @@ Software is like that.
 ~~~
 {: .output}
 
-> ## Forever, or Five Years
->
-> We haven't linked to the original haiku because
-> they don't appear to be on *Salon*'s site any longer.
-> As [Jeff Rothenberg said](https://www.clir.org/wp-content/uploads/sites/6/ensuring.pdf),
-> 'Digital information lasts forever --- or five years, whichever comes first.'
-> Luckily, popular content often [has backups](http://wiki.c2.com/?ComputerErrorHaiku).
-{: .callout}
 
 Let's find lines that contain the word 'not':
 
@@ -85,30 +78,8 @@ The output is the three lines in the file that contain the letters 'not'.
 
 By default, grep searches for a pattern in a case-sensitive way.
 In addition, the search pattern we have selected does not have to form a complete word,
-as we will see in the next example.
-
-Let's search for the pattern: 'The'.
-
-~~~
-$ grep The haiku.txt
-~~~
-{: .language-bash}
-
-~~~
-The Tao that is seen
-"My Thesis" not found.
-~~~
-{: .output}
-
-This time, two lines that include the letters 'The' are outputted,
-one of which contained our search pattern within a larger word, 'Thesis'.
-
-To restrict matches to lines containing the word 'The' on its own,
-we can give `grep` with the `-w` option.
-This will limit matches to word boundaries.
-
-Later in this lesson, we will also see how we can change the search behavior of grep
-with respect to its case sensitivity.
+and will include lines with words containing the letters 'not' such as 'note.' 
+You can search for the letters as a word by including the `-w` option ('word boundary').
 
 ~~~
 $ grep -w The haiku.txt
@@ -188,7 +159,7 @@ $ grep -n -w -i "the" haiku.txt
 ~~~
 {: .output}
 
-Now, we want to use the option `-v` to invert our search, i.e., we want to output
+We can also use the option `-v` to invert our search, i.e., we want to output
 the lines that do not contain the word 'the'.
 
 ~~~
@@ -228,55 +199,9 @@ $ grep -r Yesterday .
 ```
 {: .output}
 
-`grep` has lots of other options. To find out what they are, we can type:
+`grep` has lots of other options. You can always type `--help` or `man` 
+to see the full list.
 
-~~~
-$ grep --help
-~~~
-{: .language-bash}
-
-~~~
-Usage: grep [OPTION]... PATTERN [FILE]...
-Search for PATTERN in each FILE or standard input.
-PATTERN is, by default, a basic regular expression (BRE).
-Example: grep -i 'hello world' menu.h main.c
-
-Regexp selection and interpretation:
-  -E, --extended-regexp     PATTERN is an extended regular expression (ERE)
-  -F, --fixed-strings       PATTERN is a set of newline-separated fixed strings
-  -G, --basic-regexp        PATTERN is a basic regular expression (BRE)
-  -P, --perl-regexp         PATTERN is a Perl regular expression
-  -e, --regexp=PATTERN      use PATTERN for matching
-  -f, --file=FILE           obtain PATTERN from FILE
-  -i, --ignore-case         ignore case distinctions
-  -w, --word-regexp         force PATTERN to match only whole words
-  -x, --line-regexp         force PATTERN to match only whole lines
-  -z, --null-data           a data line ends in 0 byte, not newline
-
-Miscellaneous:
-...        ...        ...
-~~~
-{: .output}
-
-> ## Using `grep`
->
-> Which command would result in the following output:
->
-> ~~~
-> and the presence of absence:
-> ~~~
-> {: .output}
->
-> 1. `grep "of" haiku.txt`
-> 2. `grep -E "of" haiku.txt`
-> 3. `grep -w "of" haiku.txt`
-> 4. `grep -i "of" haiku.txt`
->
-> > ## Solution
-> > The correct answer is 3, because the `-w` option looks only for whole-word matches.
-> > The other options will also match 'of' when part of another word.
-> {: .solution}
-{: .challenge}
 
 > ## Wildcards
 >
@@ -308,126 +233,16 @@ Miscellaneous:
 > matches an actual 'o'.
 {: .callout}
 
-> ## Tracking a Species
->
-> Leah has several hundred
-> data files saved in one directory, each of which is formatted like this:
->
-> ~~~
-> 2013-11-05,deer,5
-> 2013-11-05,rabbit,22
-> 2013-11-05,raccoon,7
-> 2013-11-06,rabbit,19
-> 2013-11-06,deer,2
-> ~~~
-> {: .source}
->
-> She wants to write a shell script that takes a species as the first command-line argument
-> and a directory as the second argument. The script should return one file called `species.txt`
-> containing a list of dates and the number of that species seen on each date.
-> For example using the data shown above, `rabbit.txt` would contain:
->
-> ~~~
-> 2013-11-05,22
-> 2013-11-06,19
-> ~~~
-> {: .source}
->
-> Put these commands and pipes in the right order to achieve this:
->
-> ~~~
-> cut -d : -f 2
-> >
-> |
-> grep -w $1 -r $2
-> |
-> $1.txt
-> cut -d , -f 1,3
-> ~~~
-> {: .language-bash}
->
-> Hint: use `man grep` to look for how to grep text recursively in a directory
-> and `man cut` to select more than one field in a line.
->
-> An example of such a file is provided in
-> `shell-lesson-data/exercise-data/animal-counts/animals.csv`
->
-> > ## Solution
-> >
-> > ```
-> > grep -w $1 -r $2 | cut -d : -f 2 | cut -d , -f 1,3 > $1.txt
-> > ```
-> > {: .source}
-> >
-> > Actually, you can swap the order of the two cut commands and it still works. At the
-> > command line, try changing the order of the cut commands, and have a look at the output
-> > from each step to see why this is the case.
-> >
-> > You would call the script above like this:
-> >
-> > ```
-> > $ bash count-species.sh bear .
-> > ```
-> > {: .language-bash}
-> {: .solution}
-{: .challenge}
 
-> ## Little Women
->
-> You and your friend, having just finished reading *Little Women* by
-> Louisa May Alcott, are in an argument.  Of the four sisters in the
-> book, Jo, Meg, Beth, and Amy, your friend thinks that Jo was the
-> most mentioned.  You, however, are certain it was Amy.  Luckily, you
-> have a file `LittleWomen.txt` containing the full text of the novel
-> (`shell-lesson-data/exercise-data/writing/LittleWomen.txt`).
-> Using a `for` loop, how would you tabulate the number of times each
-> of the four sisters is mentioned?
->
-> Hint: one solution might employ
-> the commands `grep` and `wc` and a `|`, while another might utilize
-> `grep` options.
-> There is often more than one way to solve a programming task, so a
-> particular solution is usually chosen based on a combination of
-> yielding the correct result, elegance, readability, and speed.
->
-> > ## Solutions
-> > ```
-> > for sis in Jo Meg Beth Amy
-> > do
-> >     echo $sis:
-> >     grep -ow $sis LittleWomen.txt | wc -l
-> > done
-> > ```
-> > {: .source}
-> >
-> > Alternative, slightly inferior solution:
-> > ```
-> > for sis in Jo Meg Beth Amy
-> > do
-> >     echo $sis:
-> >     grep -ocw $sis LittleWomen.txt
-> > done
-> > ```
-> > {: .source}
-> >
-> > This solution is inferior because `grep -c` only reports the number of lines matched.
-> > The total number of matches reported by this method will be lower if there is more
-> > than one match per line.
-> >
-> > Perceptive observers may have noticed that character names sometimes appear in all-uppercase
-> > in chapter titles (e.g. 'MEG GOES TO VANITY FAIR').
-> > If you wanted to count these as well, you could add the `-i` option for case-insensitivity
-> > (though in this case, it doesn't affect the answer to which sister is mentioned
-> > most frequently).
-> {: .solution}
-{: .challenge}
+
+***Find***
 
 While `grep` finds lines in files,
 the `find` command finds files themselves.
 Again,
 it has a lot of options;
 to show how the simplest ones work, we'll use the `shell-lesson-data/exercise-data`
-directory tree shown below.
+directory.
 
 ~~~
 .
@@ -454,45 +269,7 @@ directory tree shown below.
 The `exercise-data` directory contains one file, `numbers.txt` and four directories:
 `animal-counts`, `creatures`, `proteins` and `writing` containing various files.
 
-
-For our first command,
-let's run `find .` (remember to run this command from the `shell-lesson-data/exercise-data` folder).
-
-~~~
-$ find .
-~~~
-{: .language-bash}
-
-~~~
-.
-./writing
-./writing/LittleWomen.txt
-./writing/haiku.txt
-./creatures
-./creatures/basilisk.dat
-./creatures/unicorn.dat
-./creatures/minotaur.dat
-./animal-counts
-./animal-counts/animals.csv
-./numbers.txt
-./proteins
-./proteins/ethane.pdb
-./proteins/propane.pdb
-./proteins/octane.pdb
-./proteins/pentane.pdb
-./proteins/methane.pdb
-./proteins/cubane.pdb
-~~~
-{: .output}
-
-
-As always, the `.` on its own means the current working directory,
-which is where we want our search to start.
-`find`'s output is the names of every file **and** directory
-under the current working directory.
-This can seem useless at first but `find` has many options
-to filter the output and in this lesson we will discover some
-of them.
+Similarly to `grep` the numerous options for `find` are what it such a powerful tool.
 
 The first option in our list is
 `-type d` that means 'things that are directories'.
@@ -591,41 +368,6 @@ $ find . -name "*.txt"
 
 As we said earlier,
 the command line's power lies in combining tools.
-We've seen how to do that with pipes;
-let's look at another technique.
-As we just saw,
-`find . -name "*.txt"` gives us a list of all text files in or below the current directory.
-How can we combine that with `wc -l` to count the lines in all those files?
-
-The simplest way is to put the `find` command inside `$()`:
-
-~~~
-$ wc -l $(find . -name "*.txt")
-~~~
-{: .language-bash}
-
-~~~
-  21022 ./writing/LittleWomen.txt
-     11 ./writing/haiku.txt
-      5 ./numbers.txt
-  21038 total
-~~~
-{: .output}
-
-When the shell executes this command,
-the first thing it does is run whatever is inside the `$()`.
-It then replaces the `$()` expression with that command's output.
-Since the output of `find` is the three filenames `./writing/LittleWomen.txt`,
-`./writing/haiku.txt`, and `./numbers.txt`, the shell constructs the command:
-
-~~~
-$ wc -l ./writing/LittleWomen.txt ./writing/haiku.txt ./numbers.txt
-~~~
-{: .language-bash}
-
-which is what we wanted.
-This expansion is exactly what the shell does when it expands wildcards like `*` and `?`,
-but lets us use any command we want as our own 'wildcard'.
 
 It's very common to use `find` and `grep` together.
 The first finds files that match a pattern;
