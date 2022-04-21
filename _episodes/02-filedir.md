@@ -263,7 +263,7 @@ To **quit** the `man` pages, press <kbd>Q</kbd>.
 > [manuals](http://www.gnu.org/manual/manual.html) including the
 > [core GNU utilities](http://www.gnu.org/software/coreutils/manual/coreutils.html),
 > which covers many commands introduced within this lesson.
-> {: .callout}
+{: .callout}
 
 > ## Unsupported command-line options
 >
@@ -298,7 +298,7 @@ To **quit** the `man` pages, press <kbd>Q</kbd>.
 > > and the time of its last modification. If you use both the `-h` option and the `-l` option,
 > > this makes the file size '**h**uman readable', i.e. displaying something like `5.3K`
 > > instead of `5369`.
-> > {: .solution}
+> {: .solution}
 {: .challenge}
 
 > ## Listing in Reverse Chronological Order
@@ -316,7 +316,7 @@ To **quit** the `man` pages, press <kbd>Q</kbd>.
 > > The most recently changed file is listed last when using `-rt`. This
 > > can be very useful for finding your most recent edits or checking to
 > > see if a new output file was written.
-> > {: .solution}
+> {: .solution}
 {: .challenge}
 
 ### Exploring Other Directories
@@ -657,7 +657,7 @@ Run `pwd` and `ls -F` to ensure that we're in the directory we expect.
 > > 7. Yes: unnecessarily complicated, but correct.
 > > 8. Yes: shortcut to go back to the user's home directory.
 > > 9. Yes: goes up one level.
-> >    {: .solution}
+> {: .solution}
 {: .challenge}
 
 > ## `ls` Reading Comprehension
@@ -688,7 +688,7 @@ directories "backup" and "thing"; "/Users/backup" contains "original",
 > > 2.  Yes: `ls` without directory argument lists files and directories
 > >     in the current directory.
 > > 3.  Yes: uses the absolute path explicitly.
-> >     {: .solution}
+> {: .solution}
 {: .challenge}
 
 ## General Syntax of a Shell Command

@@ -235,13 +235,11 @@ but `ls` now shows that we have created a file called `draft.txt`:
 ```
 $ ls
 ```
-
 {: .language-bash}
 
 ```
 draft.txt
 ```
-
 {: .output}
 
 > ## What's In A Name?
@@ -397,7 +395,7 @@ quotes.txt
 > > {: .language-bash}
 > > Recall that `..` refers to the parent directory (i.e. one above the current directory)
 > > and that `.` refers to the current directory.
-> > {: .solution}
+> {: .solution}
 {: .challenge}
 
 ## Copying files and directories
@@ -465,7 +463,7 @@ quotations.txt
 > >    cannot be created.
 > > 4. No, the period(.) indicates where to copy the file, but does not provide a new file name;
 > >    identical file names cannot be created.
-> >    {: .solution}
+> {: .solution}
 {: .challenge}
 
 ## Removing files and directories
@@ -518,7 +516,7 @@ ls: cannot access 'quotes.txt': No such file or directory
 > > The Unix shell doesn't have a trash bin, so all the files removed will disappear forever.
 > > By using the `-i` option, we have the chance to check that we are deleting only the files
 > > that we want to remove.
-> > {: .solution}
+> {: .solution}
 {: .challenge}
 
 If we try to remove the `thesis` directory using `rm thesis`,
@@ -598,7 +596,7 @@ or specifying a naming pattern using wildcards.
 > > ```
 > >
 > > {: .error}
-> > {: .solution}
+> {: .solution}
 {: .challenge}
 
 ### Using wildcards for accessing multiple files at once
@@ -664,7 +662,7 @@ or specifying a naming pattern using wildcards.
 > > This is the solution.
 > >
 > > `4.` only shows files starting with `ethane.`.
-> > {: .solution}
+> {: .solution}
 {: .challenge}
 
 > ## Organizing Directories and Files
@@ -715,7 +713,7 @@ or specifying a naming pattern using wildcards.
 > > Jamie needs to move her files `fructose.dat` and `sucrose.dat` to the `analyzed` directory.
 > > The shell will expand \*.dat to match all .dat files in the current directory.
 > > The `mv` command then moves the list of .dat files to the 'analyzed' directory.
-> > {: .solution}
+> {: .solution}
 {: .challenge}
 
 > ## Reproduce a folder structure
@@ -793,7 +791,7 @@ or specifying a naming pattern using wildcards.
 > >
 > > The final set of commands generates the 'raw' and 'processed' directories at the same level
 > > as the 'data' directory.
-> > {: .solution}
+> {: .solution}
 {: .challenge}
 
 {% include links.md %}

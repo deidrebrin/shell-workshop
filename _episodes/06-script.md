@@ -213,7 +213,8 @@ TER      18              1
 
 This works,
 but it may take the next person who reads `middle.sh` a moment to figure out what it does.
-Which brings us to my all time favorite topic - documentation! We can add documentation describing our script directly into the file itself through **comments**!
+Which brings us to my all time favorite topic - documentation! 
+We can add documentation describing our script directly into the file itself through **comments**!
 
 ~~~
 $ nano middle.sh
