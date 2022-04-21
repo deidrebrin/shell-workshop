@@ -21,17 +21,16 @@ keypoints:
 Alright! We are now ready to see what makes the shell such a powerful programming environment.
 We are going to take the commands we repeat frequently and save them in files
 so that we can re-run all those operations again later by typing a single command.
-For historical reasons,
-a bunch of commands saved in a file is usually called a **shell script**,
+Saving commands in a file is usually called a **shell script**,
 but make no mistake:
 you are actually writing small programs.
 
 Not only will writing shell scripts make your work faster,
 it will also make it more accurate (fewer chances for typos) and more reproducible.
 If you come back to your work in a few months or pass it on to someone else to do,
-you will be able to reproduce the same results simply by running your script,
-the script will not only allow those commands to easily be executed but it's a step-by-step 
-record of the process. 
+you will be able to reproduce the same results simply by running your script. 
+And as we talk about more later, by including comments describing each step, 
+your script provides documentation for the entire process!
 
 Let's start by going to `proteins/` within the exercise-data directory 
 and creating a new file, `middle.sh` which will
@@ -117,7 +116,8 @@ head -n 15 "$1" | tail -n 5
 Inside the shell script,
 `$1` means 'the first argument on the command line'. So just like
 other commands we ran had options and arguments that could be passed to them,
-our shell script will now also accept an argument - the name of the file to it on!
+our shell script will now also accept an argument - 
+the name of the file to run it on!
 
 We can now run our script like this:
 
@@ -151,12 +151,6 @@ ATOM     13  H           1      -1.183   0.500  -1.412  1.00  0.00
 ~~~
 {: .output}
 
-> ## Double-Quotes Around Arguments
->
-> For the same reason that we put the loop variable inside double-quotes,
-> in case the filename happens to contain any spaces,
-> we surround `$1` with double-quotes.
-{: .callout}
 
 Currently, we need to edit `middle.sh` each time we want to adjust the range of
 lines that is returned.
@@ -178,7 +172,8 @@ head -n "$2" "$1" | tail -n "$3"
 ~~~
 {: .source}
 
-We can now run:
+We can now run the following with the filename we want,
+the end line, and the number of lines to print.
 
 ~~~
 $ bash middle.sh pentane.pdb 15 5
@@ -211,6 +206,7 @@ TER      18              1
 ~~~
 {: .output}
 
+***Documentation***
 This works,
 but it may take the next person who reads `middle.sh` a moment to figure out what it does.
 Which brings us to my all time favorite topic - documentation! 
@@ -235,7 +231,7 @@ One caveat to keep in mind, is that each time you modify the script,
 you should check that the comment is still accurate:
 an explanation that sends the reader in the wrong direction is worse than none at all.
 
-***Using variables/arguments and wildcards***
+### Using variables/arguments and wildcards
 
 What if we want to process many files in a single pipeline?
 For example, if we want to sort our `.pdb` files by length, we would type:
@@ -294,7 +290,8 @@ $ bash sorted.sh *.pdb ../creatures/*.dat
 ~~~
 {: .output}
 
-***History***
+### History
+
 Suppose we have just run a series of commands that did something useful --- for example,
 that created a graph we'd like to use in a paper.
 We'd like to be able to re-create the graph later if we need to,

@@ -25,10 +25,9 @@ The most widely used way to interact with personal computers is called a
 **graphical user interface** (GUI).
 With a GUI, we give instructions by clicking a mouse and using menu-driven interactions.
 
-While the visual aid of a GUI makes it intuitive to learn,
-this way of delivering instructions to a computer scales very poorly. There may also be times
-when you have to
-interact with certain programs or environments without a GUI.
+The visual nature of a GUI makes it more intuitive and a lot times faster to learn,
+but it doesn't always scale well or some systems just won't 
+have a GUI to work with at all.
 
 This is where the Unix shell comes in.
 
@@ -54,20 +53,22 @@ day to a full day of work...depending on how often I am distracted from sheer bo
 for progress bars to
 complete.
 
-So even if you are working in environments that offer a GUI, being comfortable enough with
-the shell to input
-commands and follow tutorials or guides online that assume you will be using the command line
-is extremely helpful.
+So it can save a ton of time even if you are working in environments that offer a GUI, 
+but also being familiar enough with
+the shell to be comfortable follow tutorials or guides online is extremely helpful.
+A lot of responses in Stack Overflow or tutorials posted online will assume you
+know how to use the command line.
 
 ### The Shell
 
-The shell is a program where users can type commands.
+So what exactly is the Shell though? The shell is a program where users can type commands.
 With the shell, it's possible to run complicated programs like climate modeling software
 or simple commands that create an empty directory with only one line of code.
 The most popular Unix shell is Bash (the Bourne Again SHell ---
 so-called because it's derived from a shell written by Stephen Bourne).
 Bash is the default shell on most modern implementations of Unix and in most packages that
-provide Unix-like tools for Windows.
+provide Unix-like tools for Windows. If you are running on a Mac you may notice that 
+instead of Bash, you have something called `zsh` or ZShell - this is another popular Unix shell that may be your default. 
 
 Learning how to use the shell may not be intuitive at first - it certainly wasn't for me.
 With a GUI you're given
@@ -76,19 +77,19 @@ learning a new vocabulary in a language. However, unlike a spoken language, a sm
 "words" (i.e. commands)
 gets you a long way, and we'll cover those essentials today.
 
-The grammar of a shell allows you to combine existing tools into powerful
-pipelines and handle large volumes of data automatically. Sequences of
-commands can be written into a _script_, improving the reproducibility of
-workflows.
+The grammar of a shell allows you to combine existing commands into powerful
+pipelines and handle large volumes of data automatically. And sequences of
+commands can be written and saved into a _script_, which makes your workflow more easily
+reproducible.
 
 In addition, the command line is often the easiest way to interact with remote machines like
 a server and supercomputers.
-Familiarity with the shell is near essential to run a variety of specialized tools and
-resources including high-performance computing systems.
+Familiarity with the shell is going to make it possible to work with a variety of 
+specialized tools and
+resources such as high-performance computing systems.
 As clusters and cloud computing systems become more popular for scientific data crunching,
 being able to interact with the shell is becoming a necessary skill.
-We can build on the command-line skills covered here
-to tackle a wide range of scientific questions and computational challenges.
+
 
 Okay, let's get started!
 
@@ -105,6 +106,7 @@ In the examples for this lesson, we'll show the prompt as `$ `.
 Most importantly:
 when typing commands, either from these lessons or from other sources,
 _do not type the prompt_, only the commands that follow it.
+
 Also note that after you type a command, you have to press the <kbd>Enter</kbd> key to execute it.
 
 The prompt is followed by a **text cursor**, a character that indicates the position where your
@@ -170,7 +172,7 @@ her attention on writing her paper.
 The next few lessons will explore the ways Nelle can achieve this.
 More specifically,
 they explain how she can use a command shell to run the `goostats.sh` program,
-using loops to automate the repetitive steps of entering file names,
+including automating the repetitive steps of entering file names,
 so that her computer can work while she writes her paper.
 
 As a bonus,

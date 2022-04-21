@@ -268,12 +268,6 @@ draft.txt
 
 ## Moving files and directories
 
-Returning to the `shell-lesson-data/writing` directory,
-
-```
-$ cd ~/Desktop/shell-lesson-data/writing
-```
-{: .language-bash}
 
 In our `thesis` directory we have a file `draft.txt`
 which isn't a particularly informative name,
@@ -281,17 +275,17 @@ so let's change the file's name using `mv`,
 which is short for 'move':
 
 ```
-$ mv thesis/draft.txt thesis/quotes.txt
+$ mv draft.txt quotes.txt
 ```
 {: .language-bash}
 
 The first argument tells `mv` what we're 'moving',
 while the second is where it's to go.
 In this case,
-we're moving `thesis/draft.txt` to `thesis/quotes.txt`,
+we're moving `draft.txt` to `quotes.txt`,
 which has the same effect as renaming the file.
 Sure enough,
-`ls` shows us that `thesis` now contains one file called `quotes.txt`:
+`ls` shows us that our current directory now contains one file called `quotes.txt`:
 
 ```
 $ ls thesis
@@ -310,57 +304,17 @@ can be used to make `mv` ask you for confirmation before overwriting.
 
 Note that `mv` also works on directories.
 
-Let's move `quotes.txt` into the current working directory.
-We use `mv` once again,
-but this time we'll use just the name of a directory as the second argument
-to tell `mv` that we want to keep the filename
-but put the file somewhere new.
-(This is why the command is called 'move'.)
-In this case,
-the directory name we use is the special directory name `.` that we mentioned earlier.
+We can also use the `mv` command to actually move a file without renaming.
 
 ```
-$ mv thesis/quotes.txt .
-```
-{: .language-bash}
-
-The effect is to move the file from the directory it was in to the current working directory.
-`ls` now shows us that `thesis` is empty:
-
-```
-$ ls thesis
+$ mv quotes.txt ..
+$ cd ..
+$ ls 
 ```
 {: .language-bash}
 
 ```
-$
-```
-{: .output}
-
-Alternatively, we can confirm the file `quotes.txt` is no longer present in the `thesis` directory
-by explicitly trying to list it:
-
-```
-$ ls thesis/quotes.txt
-```
-{: .language-bash}
-
-```
-ls: cannot access 'thesis/quotes.txt': No such file or directory
-```
-{: .error}
-
-`ls` with a filename or directory as an argument only lists the requested file or directory.
-If the file given as the argument doesn't exist, the shell returns an error as we saw above.
-We can use this to see that `quotes.txt` is now present in our current directory:
-
-```
-$ ls quotes.txt
-```
-{: .language-bash}
-
-```
-quotes.txt
+$ LittleWomen.txt haiku.txt quotes.txt thesis
 ```
 {: .output}
 
@@ -552,52 +506,6 @@ Oftentimes one needs to copy or move several files at once.
 This can be done by providing a list of individual filenames,
 or specifying a naming pattern using wildcards.
 
-> ## Copy with Multiple Filenames
->
-> For this exercise, you can test the commands in the `shell-lesson-data/exercise-data` directory.
->
-> In the example below, what does `cp` do when given several filenames and a directory name?
->
-> ```
-> $ mkdir backup
-> $ cp creatures/minotaur.dat creatures/unicorn.dat backup/
-> ```
-> {: .language-bash}
->
-> In the example below, what does `cp` do when given three or more file names?
->
-> ```
-> $ cd creatures
-> $ ls -F
-> ```
-> {: .language-bash}
->
-> ```
-> basilisk.dat  minotaur.dat  unicorn.dat
-> ```
-> {: .output}
->
-> ```
-> $ $ cp minotaur.dat unicorn.dat basilisk.dat
-> ```
-> {: .language-bash}
->
-> > ## Solution
-> >
-> > If given more than one file name followed by a directory name
-> > (i.e. the destination directory must be the last argument),
-> > `cp` copies the files to the named directory.
-> >
-> > If given three file names, `cp` throws an error such as the one below,
-> > because it is expecting a directory name as the last argument.
-> >
-> > ```
-> > cp: target 'basilisk.dat' is not a directory
-> > ```
-> >
-> > {: .error}
-> {: .solution}
-{: .challenge}
 
 ### Using wildcards for accessing multiple files at once
 

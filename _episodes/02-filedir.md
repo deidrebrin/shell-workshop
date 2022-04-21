@@ -27,17 +27,24 @@ keypoints:
   - "`..` means 'the directory above the current one'; `.` on its own means 'the current directory'."
 ---
 
+Let's get comfortable interacting with our computers via the shell! 
+Part of this will involve understanding how our computers store files 
+which many applications we work with these days have started obfuscating unfortunately. 
+
 The part of the operating system responsible for managing files and directories
 is called the **file system**.
-It organizes our data into files,
+It organizes everything into individual files,
 which hold information,
 and directories (also called 'folders'),
-which hold files or other directories.
+which can hold files or other directories.
 
-Several commands are frequently used to create, inspect, rename, and delete files and directories.
+There are several commands we use to create, inspect, rename, 
+and delete files and directories.
+
 To start exploring them, we'll go to our open shell window.
 
-First, let's find out where we are by running a command called `pwd`
+First, we need to know where we are within our file system! Let's find out where we are 
+by running a command called `pwd`
 (which stands for 'print working directory'). Directories are like _places_ — at any time
 while we are using the shell, we are in exactly one place called
 our **current working directory**. Commands mostly read and write files in the
@@ -75,35 +82,11 @@ which is Nelle's **home directory**:
 > on the `cd` command.
 {: .callout}
 
-To understand what a 'home directory' is,
-let's have a look at how the file system as a whole is organized. For the
-sake of this example, we'll be
-illustrating the filesystem on our scientist Nelle's computer. After this
-illustration, you'll be learning commands to explore your own filesystem,
-which will be constructed in a similar way, but not be exactly identical.
+Typically a file system will start with what's called a **root directory** 
+which contains all of the sub-directories aka everything else. This is often 
+represented as a single `/` or if you are writing a path, it will be the first 
+`/` in the path (i.e. `/Users/deidrebrin`).
 
-On Nelle's computer, the filesystem looks like this:
-
-![The file system is made up of a root directory that contains sub-directories
-titled bin, data, users, and tmp](../fig/filesystem.svg)
-
-At the top is the **root directory**
-that holds everything else.
-We refer to it using a slash character, `/`, on its own;
-this character is the leading slash in `/Users/nelle`.
-
-Inside that directory are several other directories:
-`bin` (which is where some built-in programs are stored),
-`data` (for miscellaneous data files),
-`Users` (where users' personal directories are located),
-`tmp` (for temporary files that don't need to be stored long-term),
-and so on.
-
-We know that our current working directory `/Users/nelle` is stored inside `/Users`
-because `/Users` is the first part of its name.
-Similarly,
-we know that `/Users` is stored inside the root directory `/`
-because its name begins with `/`.
 
 > ## Slashes
 >
@@ -113,23 +96,10 @@ because its name begins with `/`.
 > it's just a separator.
 {: .callout}
 
-Underneath `/Users`,
-we find one directory for each user with an account on Nelle's machine,
-her colleagues _imhotep_ and _larry_.
-
-![Like other directories, home directories are sub-directories underneath
-"/Users" like "/Users/imhotep", "/Users/larry" or
-"/Users/nelle"](../fig/home-directories.svg)
-
-The user _imhotep_'s files are stored in `/Users/imhotep`,
-user _larry_'s in `/Users/larry`,
-and Nelle's in `/Users/nelle`. Because Nelle is the user in our
-examples here, therefore we get `/Users/nelle` as our home directory.
 Typically, when you open a new command prompt, you will be in
 your home directory to start.
 
-Now let's learn the command that will let us see the contents of our
-own filesystem. We can see what's in our home directory by running `ls`:
+So that first command that we typed, `ls` listed out the contents of our current working directory. Let's run it again now that we know we are in our home directory. 
 
 ```
 $ ls
@@ -147,11 +117,11 @@ system and how you have customized your filesystem.)
 
 `ls` prints the names of the files and directories in the current directory.
 We can make its output more comprehensible by using the `-F` **option**
-which tells `ls` to classify the output
-by adding a marker to file and directory names to indicate what they are:
+which tells `ls` to add markers to the output
+that indicate what they are:
 
 - a trailing `/` indicates that this is a directory
-- `@` indicates a link
+- `@` indicates a link (think aliases or shortcuts)
 - `*` indicates an executable
 
 Depending on your shell's default settings,
@@ -383,11 +353,11 @@ The command to change locations is `cd` followed by a
 directory name to change our working directory.
 `cd` stands for 'change directory',
 which is a bit misleading:
-the command doesn't change the directory;
-it changes the shell's idea of what directory we are in.
+the command doesn't change the directory itself, 
+it is changing what our current working directory is.
 The `cd` command is akin to double clicking a folder in a graphical interface to get into a folder.
 
-Let's say we want to move to the `data` directory we saw above. We can
+Let's say we want to move to the `exercise-data` directory. We can
 use the following series of commands to get there:
 
 ```
@@ -748,21 +718,6 @@ animal-counts  creatures  proteins  writing  numbers.txt
 ```
 {: .output}
 
-Putting all that together, our command above gives us a listing
-of files and directories in the root directory `/`.
-An example of the output you might get from the above command is given below:
-
-```
-$ ls -F /
-```
-{: .language-bash}
-
-```
-Applications/         System/
-Library/              Users/
-Network/              Volumes/
-```
-{: .output}
 
 ### Nelle's Pipeline: Organizing Files
 
@@ -809,29 +764,10 @@ $ ls north-pacific-gyre/
 ```
 {: .language-bash}
 
-Pressing <kbd>Tab</kbd> again does nothing,
-since there are multiple possibilities;
-pressing <kbd>Tab</kbd> twice brings up a list of all the files.
+Pressing <kbd>Tab</kbd> twice brings up a list of all the files.
 
-If Nelle adds <kbd>G</kbd> and presses <kbd>Tab</kbd> again,
-the shell will append 'goo' since all files that start with 'g' share
-the first three characters 'goo'.
 
-```
-$ ls north-pacific-gyre/goo
-```
-{: .language-bash}
-
-To see all of those files, she can press <kbd>Tab</kbd> twice more.
-
-```
-ls north-pacific-gyre/goo
-goodiff.sh   goostats.sh
-```
-{: .language-bash}
-
-This is called **tab completion**,
-and we will see it in many other tools as we go on.
+This is called **tab completion**, it's awesome.
 
 [arguments]: https://swcarpentry.github.io/shell-novice/reference.html#argument
 
