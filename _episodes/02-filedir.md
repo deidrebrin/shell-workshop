@@ -99,7 +99,9 @@ represented as a single `/` or if you are writing a path, it will be the first
 Typically, when you open a new command prompt, you will be in
 your home directory to start.
 
-So that first command that we typed, `ls` listed out the contents of our current working directory. Let's run it again now that we know we are in our home directory. 
+So that first command that we typed, `ls` listed out the contents of our 
+current working directory. 
+Let's run it again now that we know we are in our home directory. 
 
 ```
 $ ls

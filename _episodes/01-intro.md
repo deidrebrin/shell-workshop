@@ -68,7 +68,8 @@ The most popular Unix shell is Bash (the Bourne Again SHell ---
 so-called because it's derived from a shell written by Stephen Bourne).
 Bash is the default shell on most modern implementations of Unix and in most packages that
 provide Unix-like tools for Windows. If you are running on a Mac you may notice that 
-instead of Bash, you have something called `zsh` or ZShell - this is another popular Unix shell that may be your default. 
+instead of Bash, you have something called `zsh` or ZShell - this is another popular Unix 
+shell that may be your default. 
 
 Learning how to use the shell may not be intuitive at first - it certainly wasn't for me.
 With a GUI you're given
